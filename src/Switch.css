@@ -1,0 +1,36 @@
+.dark-mode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+.checkbox {
+  display: none;
+}
+/* ~ adyacente: con este determinamos si el estado esta o no checkeado */
+.checkbox:checked ~ .switch::before {
+  transform: translateX(22px);
+}
+.switch {
+  width: 48px;
+  height: 22px;
+  display: block;
+  border-radius: 20px;
+  background: var(--switch);
+  padding: 2px 5px;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  cursor: pointer;
+  user-select: none; /* Esto hace para que no se seleccione alguna elemento solo el checkbox*/
+}
+.switch::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: var(--switchSpinner);
+  border-radius: 50%;
+  transform: translateX(0px);
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
